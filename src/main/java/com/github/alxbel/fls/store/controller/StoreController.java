@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
+/**
+ * Http requests handler.
+ */
 @RestController
 @RequestMapping(path = "store", produces = MediaType.APPLICATION_JSON_VALUE)
 public class StoreController {
@@ -99,11 +102,6 @@ public class StoreController {
                     return rs;
                 })
                 .orElseThrow(() -> new ApplicationNotFoundException(applicationId, contactId));
-    }
-
-    @PutMapping(path= "/foo")
-    public Application foo(@RequestBody Application application) {
-        return application;
     }
 
     /**
